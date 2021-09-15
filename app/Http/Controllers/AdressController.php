@@ -34,7 +34,7 @@ class AdressController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -45,7 +45,13 @@ class AdressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->objUser->create([
+            'name'=>$request->name,
+            'cpf'=>$request->cpf,
+            'email'=>$request->email,
+            'perfil'=>$request->perfil,
+            'endereco'=>$request->endereco,
+        ]);
     }
 
     /**
