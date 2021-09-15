@@ -13,11 +13,15 @@
         <h1 class="text-center">Detalhes Usuário</h1> <hr>
 
         <div class="col-8 m-auto ">
+
+            @php
+                $adress=$use->find($use->id)->relAdress;
+            @endphp
         Nome: {{$use->name}} <br>
         CPF: {{$use->cpf}}<br>
         Email: {{$use->email}}<br>
         Perfil: Perfil de Usuário <br>
-        Endereço Completo: Endereço <br>
+        Endereço Completo: {{$adress}} <br>
         </div>
 
 
