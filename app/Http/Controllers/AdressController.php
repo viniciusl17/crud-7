@@ -9,13 +9,7 @@ use App\User;
 
 class AdressController extends Controller
 {
-    private $objUser;
-    private $objAdress;
 
-    public function __construct(){
-    $this->objUser= new User();
-    $this->objAdress= new Adress();
-    }
     /**
      * Display a listing of the resource.
      *
@@ -23,8 +17,7 @@ class AdressController extends Controller
      */
     public function index()
     {
-        $user=$this->objUser->all();
-       return view('index', compact('user'));
+
     }
 
     /**
@@ -34,7 +27,7 @@ class AdressController extends Controller
      */
     public function create()
     {
-        return view('create');
+
     }
 
     /**
@@ -45,13 +38,7 @@ class AdressController extends Controller
      */
     public function store(Request $request)
     {
-        $this->objUser->create([
-            'name'=>$request->name,
-            'cpf'=>$request->cpf,
-            'email'=>$request->email,
-            'perfil'=>$request->perfil,
-            'endereco'=>$request->endereco,
-        ]);
+
     }
 
     /**
@@ -63,8 +50,8 @@ class AdressController extends Controller
      */
     public function show($id)
     {
-        $use=$this->objUser->find($id);
-        return view('/show', compact('use'));
+
+
     }
 
     /**

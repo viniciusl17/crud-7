@@ -12,26 +12,39 @@
 <body>
         <h1 class="text-center">Cadastrar um novo Usuário</h1> <hr>
 
-        <div class="col-8 m-auto ">
+        <div class="col-6 m-auto ">
             <form name="formCad" id="formCad" method="post" action="{{url("users")}}">
                 @csrf
                 <label>Nome do Usuário</label>
-                <input class="form-control" type="text" name="Nome" id="nome" placeholder="Nome do Usuário:"><br>
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password"><br>
+                <input class="form-control" type="text" name="name" id="name" placeholder="Nome do Usuário:"><br>
                 <label>CPF </label>
-                <input class="form-control" type="number" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" name="cpf" id="cpf" placeholder="Digite um CPF válido:"><br>
+                <input class="form-control" type="number" name="cpf" id="cpf" placeholder="Digite um CPF válido:"><br>
                 <label>E-mail </label>
                 <input class="form-control" type="email" name="email" id="email" placeholder="Email do Usuário:"><br>
                 <label>Perfil</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Admin</option>
-                    <option>User</option>
-                    <option>Client</option>
-                </select><br>
-                <label>Endereço</label>
-                <input class="form-control" type="text" name="Nome" id="nome" placeholder="Endereço do Usuário:"><br>
-                <input class="btn btn-primary" type="submit" name="Cadastrar">
+                <input class="form-control" type="text" name="perfil" id="perfil" placeholder="Coloque aqui um Perfil"><br>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label >Rua</label>
+                            <input  type="text" class="form-control" id="rua" placeholder="Ex: Rua A">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Bairro</label>
+                            <input type="text" class="form-control" id="bairro" placeholder="Ex:Centro">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label >Cidade</label>
+                            <input type="text" class="form-control" id="cidade" placeholder="Ex:Salvador">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label >Estado</label>
+                            <input type="text" class="form-control" id="Estado" placeholder="Ex: BA">
+                        </div>
+                    </div>
+
+
+                <input class="btn btn-primary" type="submit" value="Cadastra">
             </form>
 
         </div>

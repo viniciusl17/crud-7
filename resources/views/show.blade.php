@@ -17,13 +17,13 @@
                $end=$use->find($use->id)->relAdress;
                 $enderecos = $use->relAdress()->get();
             @endphp
-        Nome: {{$use->name}} <br>
-        CPF: {{$use->cpf}}<br>
-        Email: {{$use->email}}<br>
-        Perfil: Perfil de Usuário <br>
+        <STRONG>NOME: </STRONG>{{$use->name}} <br>
+            <STRONG>CPF: </STRONG> {{$use->cpf}}<br>
+            <STRONG>E-MAIL: </STRONG>{{$use->email}}<br>
+            <STRONG>PERFIL: </STRONG> Perfil de Usuário <br>
             @if ($enderecos)
                 @foreach ($enderecos as $endereco)
-                    Endereço Completo: {{$endereco->rua}} , {{$endereco->bairro}}, {{$endereco->cidade}}/{{$endereco->estado}}
+                    <STRONG>ENDEREÇO:<br></STRONG> Rua: {{$endereco->rua}} <br>Bairro: {{$endereco->bairro}}<br>Cidade/UF: {{$endereco->cidade}}/{{$endereco->estado}}. <br>
                 @endforeach
             @endif
         </div>

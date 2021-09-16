@@ -20,7 +20,7 @@
 </div>
 
 
-<div class="col-8 m-auto ">
+<div class="col-9 m-auto ">
     <table class="table text-center">
         <thead class="thead-dark">
         <tr>
@@ -45,7 +45,7 @@
                 <td>{{$users->name}}</td>
                 <td>{{$users->cpf}}</td>
                 <td>{{$users->email}}</td>
-                <td>  </td>
+                <td> Perfil de Usuário </td>
                 @if ($enderecos)
                 @foreach ($enderecos as $endereco)
                 <td> {{$endereco->rua}} </td>
