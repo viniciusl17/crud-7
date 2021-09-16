@@ -37,15 +37,20 @@
 
         @foreach($user as $users)
             @php
-            $adress=$user->find($users->id)->relAdress;
+               // $end=$users->find($users->id)->relAdress;
+                $enderecos = $users->relAdress()->get();
             @endphp
             <tr>
                 <th scope="row">{{$users->id}}</th>
                 <td>{{$users->name}}</td>
                 <td>{{$users->cpf}}</td>
                 <td>{{$users->email}}</td>
-                <td>Perfil  </td>
-                <td>Endereço </td>
+                <td>  </td>
+                @if ($enderecos)
+                @foreach ($enderecos as $endereco)
+                <td> {{$endereco->rua}} </td>
+                @endforeach
+                @endif
                 <td>
                     <a href="{{url("users/$users->id")}}">
                         <button class="btn btn-dark">Detalhar</button>

@@ -100,4 +100,12 @@ class AdressController extends Controller
     {
         //
     }
+
+    /**
+     * @return Adress
+     */
+    public function getObjAdress(): Adress
+    {
+        return $this->objAdress;
+    }
 }

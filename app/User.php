@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function relAdress(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany('App\Adress', 'id_user');
+        return $this->hasMany(Adress::class, 'id_user');
     }
 }

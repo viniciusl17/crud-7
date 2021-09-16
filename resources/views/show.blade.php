@@ -13,15 +13,19 @@
         <h1 class="text-center">Detalhes Usuário</h1> <hr>
 
         <div class="col-8 m-auto ">
-
             @php
-                $adress=$use->find($use->id)->relAdress;
+               $end=$use->find($use->id)->relAdress;
+                $enderecos = $use->relAdress()->get();
             @endphp
         Nome: {{$use->name}} <br>
         CPF: {{$use->cpf}}<br>
         Email: {{$use->email}}<br>
         Perfil: Perfil de Usuário <br>
-        Endereço Completo: {{$adress}} <br>
+            @if ($enderecos)
+                @foreach ($enderecos as $endereco)
+                    Endereço Completo: {{$endereco->rua}} , {{$endereco->bairro}}, {{$endereco->cidade}}/{{$endereco->estado}}
+                @endforeach
+            @endif
         </div>
 
 

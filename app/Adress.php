@@ -8,8 +8,12 @@ class Adress extends Model
 {
     protected $table='adress';
 
-    public function relUser(): \Illuminate\Database\Eloquent\Relations\HasMany
+    protected $fillable = [
+        'rua', 'bairro', 'cidade', 'estado',
+    ];
+
+    public function relUser(): \Illuminate\Database\Eloquent\Relations\belongsTO
     {
-        return $this->hasMany('App\User', 'id', 'id_user');
+        return $this->belongsTo(User::class, 'id_user');
     }
 }
